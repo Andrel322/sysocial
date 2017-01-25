@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/show.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block header %}
+    <div class="page-header">
+        <div class="container"> 
+            <h1>Sócio - {{partner.name}}</h1>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">Nome: {{partner.name}}</h2>
+      </div>
+      <div class="panel-body">
+        <p>ID: {{partner.id}}</p>
+        <p>CPF: {{partner.cpf}}</p>
+        <p>EMAIL: {{partner.email}}</p>
+        <p>ANO DE NASCIMENTO: {{partner.date|date('d-m-Y')}}
+        <p><a href={{path("partner_update", {'page':partner.id}) }} class="btn btn-primary" role="button">Editar</a> <a href="{{path("partner_delete", {'page':partner.id}) }}" class="btn btn-default" role="button">Deletar</a>
+        <a href={{path ("homepage")}} class="btn btn-default" role="button">Voltar</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.panel-body{
+    color: #000000;
+}

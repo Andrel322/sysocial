@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <div class="page-header">
+        <div class="container"> 
+		    <h1>SYSocial - Receita Federal do Brasil</h1>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Sócios</h3>
+                    <form class="form-group" action="{{ path('partner_show') }}" method="post">
+                        <label for="partner">CPF:</label>
+                        <input type="text" id="partnerCPF" class="form-control" name="_partnerCPF" placeholder="CPF do Sócio" />
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                    </form>
+                    <p><a href="{{ path('partner_registration') }}" class="btn btn-primary" role="button">Registrar Sócio</a></p>
+                    {% if errorPartner %}
+                        <div class="alert alert-danger" role="alert">{{errorPartner}}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail"> 
+                <div class="caption">
+                    <h3>Empresas</h3>
+                    <form class="form-group" action="{{ path('company_show') }}" method="post">
+                        <label for="company">CNPJ:</label>
+                        <input type="text" id="companyCNPJ" class="form-control" name="_companyCNPJ" placeholder="CNPJ da Empresa" />
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                    </form>
+                    <p><a href="{{ path('company_registration') }}" class="btn btn-primary" role="button">Registrar Empresa</a></p>
+                    {% if errorCompany %}
+                        <div class="alert alert-danger" role="alert">{{errorCompany}}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

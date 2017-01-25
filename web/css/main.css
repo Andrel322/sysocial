@@ -1,0 +1,8 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body{
+    background: #4096ee;
+    color:#ffffff;
+    font-family: 'Montserrat' ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
